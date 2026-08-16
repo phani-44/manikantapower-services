@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Manikanta Power Services — engineered power systems for demanding commercial and industrial environments.">
-  <title>Manikanta Power Services — Power, Engineered.</title>
+  <meta name="description" content="Manikanta Power Services provides reliable HT and LT electrical works, transformers, panel manufacturing, oil filtration, solar, fire safety and industrial maintenance.">
+  <title>Manikanta Power Services — Reliable Power & Infrastructure Solutions</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Manrope:wght@400;500;600;700&family=Oswald:wght@500;600;700&display=swap');
 
@@ -189,6 +189,12 @@
     .contact .eyebrow::before { background: #003758; }
     .contact h2 { margin-top: 22px; font: 600 clamp(62px, 8vw, 110px)/.86 var(--display); letter-spacing: -.025em; text-transform: uppercase; }
     .contact__copy { margin-top: 24px; max-width: 480px; line-height: 1.7; font-size: 14px; }
+    .contact__details { margin-top: 34px; display: grid; gap: 10px; font: 500 11px/1.5 var(--mono); letter-spacing: .04em; }
+    .contact__details a { width: fit-content; border-bottom: 1px solid rgba(0, 17, 27, .35); }
+    .contact__details a:hover { border-color: #00111b; }
+    .contact__channel { display: flex; align-items: center; flex-wrap: wrap; gap: 8px 14px; }
+    .contact__channel strong { min-width: 142px; font-weight: 500; }
+    .contact__channel a { font-size: 9px; letter-spacing: .12em; text-transform: uppercase; }
     .contact form { display: grid; gap: 18px; align-content: center; }
     .field { display: grid; gap: 8px; }
     .field label { font: 500 9px/1 var(--mono); letter-spacing: .16em; text-transform: uppercase; }
@@ -200,6 +206,9 @@
 
     footer { padding: 42px 0; background: #030405; border-top: 1px solid var(--line); }
     .footer__inner { display: flex; justify-content: space-between; gap: 28px; color: #738087; font: 400 9px/1.6 var(--mono); letter-spacing: .12em; text-transform: uppercase; }
+    .footer__social { display: flex; gap: 20px; }
+    .footer__social a { transition: color .2s; }
+    .footer__social a:hover { color: var(--blue-soft); }
 
     .reveal { opacity: 0; transform: translateY(28px); transition: opacity .8s ease, transform .8s ease; }
     .reveal.on { opacity: 1; transform: none; }
@@ -250,10 +259,10 @@
     <div class="nav__inner shell">
       <a class="brand" href="#top" aria-label="Manikanta Power Services home"><span class="brand__mark" aria-hidden="true"></span>MANIKANTA POWER SERVICES</a>
       <div class="nav__links">
-        <a href="#process">Process</a>
         <a href="#services">Services</a>
-        <a href="#standards">Standards</a>
-        <a class="nav__cta" href="#contact">Start a project</a>
+        <a href="#about">About</a>
+        <a href="#clients">Our clients</a>
+        <a class="nav__cta" href="#contact">Get a quote</a>
       </div>
     </div>
   </nav>
@@ -261,32 +270,32 @@
   <header class="hero" id="top">
     <div class="hero__bg" aria-hidden="true"></div>
     <div class="hero__content shell">
-      <p class="eyebrow">Industrial electrical systems / Built to perform</p>
-      <h1>Power,<br><span>engineered.</span></h1>
+      <p class="eyebrow">HT & LT works / Power infrastructure / Safety systems</p>
+      <h1>Reliable<br><span>power.</span></h1>
       <div class="hero__bottom">
-        <p class="hero__lead">From first survey to final energization, we design, install and commission electrical infrastructure for demanding commercial and industrial environments.</p>
-        <a class="button" href="#process">See how we work</a>
+        <p class="hero__lead">Reliable power and infrastructure solutions for industry—from HT and LT systems and general electrical works to transformers, panels, solar, fire safety and ongoing technical support.</p>
+        <a class="button" href="#contact">Get a quote</a>
       </div>
     </div>
-    <div class="hero__meta">Design · Installation · Commissioning · Maintenance</div>
-    <div class="hero__scroll">Scroll to energize</div>
+    <div class="hero__meta">Installation · Maintenance · Manufacturing · 24/7 Support</div>
+    <div class="hero__scroll">Explore our services</div>
   </header>
 
   <div class="marquee" aria-hidden="true">
     <div class="marquee__track">
-      <span>Power distribution</span><b>◆</b><span>Switchgear</span><b>◆</b><span>Automation</span><b>◆</b><span>Critical systems</span><b>◆</b><span>Preventive maintenance</span><b>◆</b>
-      <span>Power distribution</span><b>◆</b><span>Switchgear</span><b>◆</b><span>Automation</span><b>◆</b><span>Critical systems</span><b>◆</b><span>Preventive maintenance</span><b>◆</b>
+      <span>HT works</span><b>◆</b><span>LT works</span><b>◆</b><span>Transformers</span><b>◆</b><span>Oil filtration</span><b>◆</b><span>Panel manufacturing</span><b>◆</b><span>Solar</span><b>◆</b><span>Fire safety</span><b>◆</b><span>Electrical works</span><b>◆</b>
+      <span>HT works</span><b>◆</b><span>LT works</span><b>◆</b><span>Transformers</span><b>◆</b><span>Oil filtration</span><b>◆</b><span>Panel manufacturing</span><b>◆</b><span>Solar</span><b>◆</b><span>Fire safety</span><b>◆</b><span>Electrical works</span><b>◆</b>
     </div>
   </div>
 
-  <section class="intro" aria-labelledby="intro-title">
+  <section class="intro" id="about" aria-labelledby="intro-title">
     <div class="intro__grid shell">
-      <p class="eyebrow reveal">The Manikanta standard</p>
+      <p class="eyebrow reveal">About Manikanta Power Services</p>
       <div>
-        <h2 class="reveal" id="intro-title">Complex power.<br><em>Clear execution.</em></h2>
+        <h2 class="reveal" id="intro-title">Powering industry.<br><em>Built for reliability.</em></h2>
         <div class="intro__copy reveal">
-          <p>Electrical infrastructure should work quietly, safely and without compromise. We coordinate every detail—from load studies and containment to testing and handover.</p>
-          <p>Our process is built around disciplined planning, transparent communication and work that remains serviceable long after the project is complete.</p>
+          <p>Manikanta Power Services provides industrial electrical and power infrastructure services, including HT and LT works, general electrical works, transformer installation and service, panels and safety systems.</p>
+          <p>Our mission is to empower industries with uninterrupted, efficient and scalable energy systems—delivered with a focus on quality, reliability and safety.</p>
         </div>
       </div>
     </div>
@@ -306,10 +315,10 @@
       <div class="transform__caption">
         <div class="state-label" aria-live="polite">
           <span class="count" id="stateCount">01 / Assess</span>
-          <h3 id="stateTitle">Know the <span>load.</span></h3>
-          <p id="stateCopy">We begin with the environment, the demand and the risks—building a clear route from current state to operational readiness.</p>
+          <h3 id="stateTitle">Understand the <span>system.</span></h3>
+          <p id="stateCopy">We assess your power infrastructure, operational needs and maintenance priorities before defining the right solution.</p>
         </div>
-        <p class="transform__side"><strong>Scroll-driven sequence</strong>Assessment → Commissioning → Energized</p>
+        <p class="transform__side"><strong>Complete project support</strong>Assessment → Installation → Maintenance</p>
       </div>
     </div>
   </section>
@@ -318,38 +327,41 @@
     <div class="shell">
       <div class="section-head">
         <div>
-          <p class="eyebrow reveal">What we deliver</p>
-          <h2 class="reveal" id="services-title">End-to-end<br>capability.</h2>
+          <p class="eyebrow reveal">Our services</p>
+          <h2 class="reveal" id="services-title">Complete power<br>solutions.</h2>
         </div>
-        <p class="reveal">One accountable team across the electrical lifecycle—from technical design through installation, testing and ongoing care.</p>
+        <p class="reveal">Installation, maintenance and specialist support for industrial and commercial electrical infrastructure.</p>
       </div>
       <div class="service-grid">
-        <article class="service reveal"><span class="service__num">01 / 06</span><div class="service__icon"><span>⌁</span></div><h3>Power distribution</h3><p>LV distribution, switchboards, protection coordination and resilient power architecture.</p></article>
-        <article class="service reveal"><span class="service__num">02 / 06</span><div class="service__icon"><span>↯</span></div><h3>Industrial installation</h3><p>Containment, cabling, machinery supplies and disciplined installation for demanding sites.</p></article>
-        <article class="service reveal"><span class="service__num">03 / 06</span><div class="service__icon"><span>◎</span></div><h3>Testing & commissioning</h3><p>Structured verification, functional testing and clear documentation before energization.</p></article>
-        <article class="service reveal"><span class="service__num">04 / 06</span><div class="service__icon"><span>◈</span></div><h3>Automation & controls</h3><p>Integrated control panels, instrumentation and intelligent building interfaces.</p></article>
-        <article class="service reveal"><span class="service__num">05 / 06</span><div class="service__icon"><span>⏱</span></div><h3>Planned maintenance</h3><p>Inspection-led maintenance that protects uptime and catches risk before failure.</p></article>
-        <article class="service reveal"><span class="service__num">06 / 06</span><div class="service__icon"><span>△</span></div><h3>System upgrades</h3><p>Phased modernization of aging infrastructure with minimal operational disruption.</p></article>
+        <article class="service reveal"><span class="service__num">01 / 09</span><div class="service__icon"><span>↟</span></div><h3>HT works</h3><p>Installation and maintenance of high-tension electrical systems for industrial power requirements.</p></article>
+        <article class="service reveal"><span class="service__num">02 / 09</span><div class="service__icon"><span>↯</span></div><h3>LT works</h3><p>Installation and maintenance of dependable low-tension electrical systems.</p></article>
+        <article class="service reveal"><span class="service__num">03 / 09</span><div class="service__icon"><span>◉</span></div><h3>Oil filtration</h3><p>Transformer and industrial oil filtration services for optimal equipment performance.</p></article>
+        <article class="service reveal"><span class="service__num">04 / 09</span><div class="service__icon"><span>▦</span></div><h3>Panel manufacturing</h3><p>Custom design and manufacturing of electrical panels and control systems.</p></article>
+        <article class="service reveal"><span class="service__num">05 / 09</span><div class="service__icon"><span>⌁</span></div><h3>Transformers</h3><p>Installation, maintenance and servicing of industrial transformers.</p></article>
+        <article class="service reveal"><span class="service__num">06 / 09</span><div class="service__icon"><span>☀</span></div><h3>Solar</h3><p>Design and installation of solar power systems for industrial and commercial setups.</p></article>
+        <article class="service reveal"><span class="service__num">07 / 09</span><div class="service__icon"><span>△</span></div><h3>Fire safety</h3><p>Installation of fire detection and suppression systems for safety compliance.</p></article>
+        <article class="service reveal"><span class="service__num">08 / 09</span><div class="service__icon"><span>◫</span></div><h3>Electrical works</h3><p>Complete industrial and commercial electrical works, installation and infrastructure support.</p></article>
+        <article class="service reveal"><span class="service__num">09 / 09</span><div class="service__icon"><span>⏱</span></div><h3>Maintenance & support</h3><p>24/7 technical support and scheduled maintenance for electrical systems.</p></article>
       </div>
     </div>
   </section>
 
-  <section class="proof" id="standards" aria-labelledby="proof-title">
+  <section class="proof" id="clients" aria-labelledby="proof-title">
     <div class="proof__grid shell">
       <div class="proof__visual reveal" aria-hidden="true">
-        <span class="proof__tag proof__tag--a">Operational integrity / 01</span>
+        <span class="proof__tag proof__tag--a">Reliable infrastructure / 01</span>
         <div class="proof__rings"></div><div class="proof__bolt">ϟ</div>
-        <span class="proof__tag proof__tag--b">Engineered for uptime</span>
+        <span class="proof__tag proof__tag--b">Powering leading industries</span>
       </div>
       <div class="proof__copy">
-        <p class="eyebrow reveal">Built around safety</p>
-        <h2 class="reveal" id="proof-title">No shortcuts.<br>No surprises.</h2>
-        <p class="reveal">The best electrical work is deliberate. Every project follows a controlled path with documented decisions, clear ownership and attention to the people who will operate the system.</p>
+        <p class="eyebrow reveal">Our clients</p>
+        <h2 class="reveal" id="proof-title">Trusted by<br>industry.</h2>
+        <p class="reveal">Manikanta Power Services supports recognized manufacturers and industrial organizations with reliable electrical and infrastructure solutions.</p>
         <div class="proof__list reveal">
-          <div class="proof__item"><span>01</span><p>Methodical risk assessment and work planning</p></div>
-          <div class="proof__item"><span>02</span><p>Quality checks at every installation stage</p></div>
-          <div class="proof__item"><span>03</span><p>Traceable testing and handover documentation</p></div>
-          <div class="proof__item"><span>04</span><p>Maintainable systems designed for the long term</p></div>
+          <div class="proof__item"><span>01</span><p>Isuzu Motors · Kellogg's</p></div>
+          <div class="proof__item"><span>02</span><p>TCL · Wingtech</p></div>
+          <div class="proof__item"><span>03</span><p>Varun Beverages · Blue Star</p></div>
+          <div class="proof__item"><span>04</span><p>Quality, reliability and safety across every service</p></div>
         </div>
       </div>
     </div>
@@ -358,15 +370,22 @@
   <section class="contact" id="contact" aria-labelledby="contact-title">
     <div class="contact__grid shell">
       <div>
-        <p class="eyebrow">Start a conversation</p>
-        <h2 id="contact-title">Ready to<br>power up?</h2>
-        <p class="contact__copy">Tell us what you are building, upgrading or trying to solve. We will help define the next practical step.</p>
+        <p class="eyebrow">Available 24/7</p>
+        <h2 id="contact-title">Let's power<br>your project.</h2>
+        <p class="contact__copy">Call, WhatsApp or email Manikanta Power Services for HT and LT works, transformer service, panels, solar, fire safety and maintenance support.</p>
+        <div class="contact__details">
+          <div class="contact__channel"><strong>+91 81 87 89 89 99</strong><a href="tel:+918187898999">Call</a><a href="https://wa.me/918187898999" target="_blank" rel="noopener noreferrer">WhatsApp</a></div>
+          <div class="contact__channel"><strong>+91 81 87 89 89 89</strong><a href="tel:+918187898989">Call</a><a href="https://wa.me/918187898989" target="_blank" rel="noopener noreferrer">WhatsApp</a></div>
+          <a href="mailto:info@manikantapowerservices.com">info@manikantapowerservices.com</a>
+          <a href="https://www.instagram.com/manikanta_group/" target="_blank" rel="noopener noreferrer">Instagram: @manikanta_group</a>
+          <a href="https://www.linkedin.com/in/manikanta-group-16041b427/" target="_blank" rel="noopener noreferrer">LinkedIn: Manikanta Group</a>
+        </div>
       </div>
       <form id="contactForm">
         <div class="field"><label for="name">Name / company</label><input id="name" name="name" autocomplete="name" required></div>
         <div class="field"><label for="email">Email</label><input id="email" name="email" type="email" autocomplete="email" required></div>
         <div class="field"><label for="message">Project brief</label><textarea id="message" name="message" required></textarea></div>
-        <button class="form-submit" type="submit">Request a consultation ↗</button>
+        <button class="form-submit" type="submit">Send enquiry by email ↗</button>
         <p class="form-note" id="formNote" role="status"></p>
       </form>
     </div>
@@ -375,7 +394,7 @@
   <footer>
     <div class="footer__inner shell">
       <span>© <span id="year"></span> Manikanta Power Services</span>
-      <span>Concept site · Replace identity and contact details before launch</span>
+      <span class="footer__social"><a href="https://www.instagram.com/manikanta_group/" target="_blank" rel="noopener noreferrer">Instagram</a><a href="https://www.linkedin.com/in/manikanta-group-16041b427/" target="_blank" rel="noopener noreferrer">LinkedIn</a></span>
       <a href="#top">Back to top ↑</a>
     </div>
   </footer>
@@ -395,9 +414,9 @@
     let activeState = -1;
 
     const states = [
-      { count: '01 / Assess', status: 'Assessment', title: 'Know the <span>load.</span>', copy: 'We begin with the environment, the demand and the risks—building a clear route from current state to operational readiness.' },
-      { count: '02 / Execute', status: 'Commissioning', title: 'Control every <span>detail.</span>', copy: 'Disciplined installation, verification and commissioning turn the design into a safe, serviceable system.' },
-      { count: '03 / Energize', status: 'System online', title: 'Ready for <span>power.</span>', copy: 'The completed system is tested, documented and ready to perform—today and through the demands ahead.' }
+      { count: '01 / Assess', status: 'Assessment', title: 'Understand the <span>system.</span>', copy: 'We assess your power infrastructure, operational needs and maintenance priorities before defining the right solution.' },
+      { count: '02 / Execute', status: 'Installation', title: 'Deliver with <span>precision.</span>', copy: 'Our team installs, services and verifies electrical infrastructure with a focus on quality, reliability and safety.' },
+      { count: '03 / Support', status: 'Power online', title: 'Keep industry <span>moving.</span>', copy: 'From final energization to scheduled maintenance and 24/7 technical support, we help keep your systems performing.' }
     ];
 
     function edgeClip(amount) {
@@ -450,7 +469,11 @@
 
     document.getElementById('contactForm').addEventListener('submit', event => {
       event.preventDefault();
-      document.getElementById('formNote').textContent = 'Demo form ready — connect your preferred inbox or CRM before launch.';
+      const data = new FormData(event.currentTarget);
+      const subject = encodeURIComponent(`Project enquiry from ${data.get('name')}`);
+      const body = encodeURIComponent(`Name / Company: ${data.get('name')}\nEmail: ${data.get('email')}\n\nProject brief:\n${data.get('message')}`);
+      document.getElementById('formNote').textContent = 'Opening your email app…';
+      location.href = `mailto:info@manikantapowerservices.com?subject=${subject}&body=${body}`;
     });
     document.getElementById('year').textContent = new Date().getFullYear();
   </script>
