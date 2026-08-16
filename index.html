@@ -1,0 +1,461 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Manikanta Power Services — engineered power systems for demanding commercial and industrial environments.">
+  <title>Manikanta Power Services — Power, Engineered.</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Manrope:wght@400;500;600;700&family=Oswald:wght@500;600;700&display=swap');
+
+    :root {
+      --ink: #050708;
+      --panel: #0a0e11;
+      --panel-2: #0f1418;
+      --paper: #eef3f5;
+      --muted: #8d9aa1;
+      --line: rgba(210, 231, 239, .14);
+      --blue: #3db8ff;
+      --blue-soft: #a7dcff;
+      --amber: #ffab45;
+      --max: 1240px;
+      --mono: "DM Mono", monospace;
+      --sans: "Manrope", sans-serif;
+      --display: "Oswald", sans-serif;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; background: var(--ink); }
+    body {
+      background: var(--ink);
+      color: var(--paper);
+      font-family: var(--sans);
+      overflow-x: hidden;
+    }
+    body::before {
+      content: "";
+      position: fixed;
+      inset: -80%;
+      z-index: 90;
+      pointer-events: none;
+      opacity: .045;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.92' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+      animation: grain .22s steps(2) infinite;
+    }
+    @keyframes grain { to { transform: translate3d(3%, -2%, 0); } }
+    ::selection { background: var(--blue); color: #00111d; }
+    a { color: inherit; text-decoration: none; }
+    button, input, textarea { font: inherit; }
+
+    .shell { width: min(calc(100% - 48px), var(--max)); margin-inline: auto; }
+    .eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: var(--blue-soft);
+      font: 500 10px/1 var(--mono);
+      letter-spacing: .22em;
+      text-transform: uppercase;
+    }
+    .eyebrow::before { content: ""; width: 26px; height: 1px; background: var(--blue); }
+
+    .nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 70;
+      border-bottom: 1px solid transparent;
+      transition: background .3s, border-color .3s;
+    }
+    .nav.scrolled { background: rgba(5, 7, 8, .86); border-color: var(--line); backdrop-filter: blur(18px); }
+    .nav__inner { height: 78px; display: flex; align-items: center; justify-content: space-between; }
+    .brand { display: inline-flex; align-items: center; gap: 12px; font: 600 19px/1 var(--display); letter-spacing: .08em; white-space: nowrap; }
+    .brand__mark { position: relative; width: 26px; height: 32px; }
+    .brand__mark::before,
+    .brand__mark::after { content: ""; position: absolute; background: var(--blue); transform: skewX(-22deg); box-shadow: 0 0 18px rgba(61, 184, 255, .45); }
+    .brand__mark::before { width: 9px; height: 20px; left: 9px; top: 0; }
+    .brand__mark::after { width: 9px; height: 20px; left: 7px; bottom: 0; }
+    .nav__links { display: flex; align-items: center; gap: 32px; font: 500 10px/1 var(--mono); letter-spacing: .14em; text-transform: uppercase; }
+    .nav__links a { color: #b7c1c6; transition: color .2s; }
+    .nav__links a:hover { color: #fff; }
+    .nav__cta { padding: 12px 17px; border: 1px solid rgba(61, 184, 255, .55); color: var(--blue-soft) !important; }
+
+    .hero { position: relative; min-height: 100svh; display: grid; align-items: end; isolation: isolate; overflow: hidden; }
+    .hero__bg {
+      position: absolute;
+      inset: -5%;
+      z-index: -3;
+      background: url("./assets/01-power-offline.png") center/cover no-repeat;
+      animation: hero-drift 16s ease-out both;
+    }
+    @keyframes hero-drift { from { transform: scale(1.09); } to { transform: scale(1); } }
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -2;
+      background: linear-gradient(90deg, rgba(3, 5, 6, .94) 0%, rgba(3, 5, 6, .67) 42%, rgba(3, 5, 6, .2) 70%), linear-gradient(0deg, #050708 0%, transparent 34%);
+    }
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      background: radial-gradient(circle at 73% 52%, rgba(61, 184, 255, .12), transparent 23%);
+      animation: pulse 4.8s ease-in-out infinite;
+    }
+    @keyframes pulse { 50% { opacity: .35; } }
+    .hero__content { padding: 180px 0 88px; }
+    .hero h1 {
+      max-width: 880px;
+      margin-top: 26px;
+      font: 600 clamp(68px, 10.7vw, 164px)/.82 var(--display);
+      letter-spacing: -.035em;
+      text-transform: uppercase;
+    }
+    .hero h1 span { color: transparent; -webkit-text-stroke: 1px rgba(238, 243, 245, .72); }
+    .hero__bottom { margin-top: 42px; display: grid; grid-template-columns: minmax(260px, 470px) 1fr; gap: 80px; align-items: end; }
+    .hero__lead { color: #b8c2c7; font-size: 15px; line-height: 1.75; }
+    .button { display: inline-flex; align-items: center; justify-content: space-between; gap: 36px; min-width: 240px; padding: 17px 18px; background: var(--blue); color: #00101a; font: 600 11px/1 var(--mono); letter-spacing: .12em; text-transform: uppercase; transition: transform .2s, box-shadow .2s; }
+    .button:hover { transform: translateY(-2px); box-shadow: 0 10px 40px rgba(61, 184, 255, .2); }
+    .button::after { content: "↗"; font-size: 16px; }
+    .hero__meta { position: absolute; right: 24px; top: 50%; transform: translateY(-50%); writing-mode: vertical-rl; font: 400 9px/1 var(--mono); letter-spacing: .3em; color: rgba(238, 243, 245, .45); text-transform: uppercase; }
+    .hero__scroll { position: absolute; right: 24px; bottom: 26px; display: flex; align-items: center; gap: 10px; font: 400 9px/1 var(--mono); letter-spacing: .18em; color: var(--muted); text-transform: uppercase; }
+    .hero__scroll::after { content: ""; width: 54px; height: 1px; background: linear-gradient(90deg, var(--blue), transparent); }
+
+    .marquee { overflow: hidden; border-block: 1px solid var(--line); background: #070a0c; }
+    .marquee__track { width: max-content; padding: 18px 0; display: flex; align-items: center; gap: 34px; animation: marquee 22s linear infinite; color: #95a1a7; font: 400 10px/1 var(--mono); letter-spacing: .18em; text-transform: uppercase; }
+    .marquee__track b { color: var(--blue); font-size: 15px; }
+    @keyframes marquee { to { transform: translateX(-50%); } }
+
+    .intro { padding: 140px 0 126px; }
+    .intro__grid { display: grid; grid-template-columns: .7fr 1.6fr; gap: 80px; }
+    .intro h2 { max-width: 900px; font: 500 clamp(42px, 6vw, 78px)/1.03 var(--display); letter-spacing: -.02em; text-transform: uppercase; }
+    .intro h2 em { font-style: normal; color: var(--blue); }
+    .intro__copy { margin-top: 42px; display: grid; grid-template-columns: 1fr 1fr; gap: 48px; color: var(--muted); font-size: 14px; line-height: 1.85; }
+
+    .transformation { height: 360vh; position: relative; }
+    .transform__sticky { position: sticky; top: 0; height: 100svh; overflow: hidden; background: #020304; }
+    .transform__image { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+    #state2, #state3 { clip-path: polygon(0 0, 0 0, 0 100%, 0 100%); }
+    .transform__shade { position: absolute; inset: 0; background: linear-gradient(90deg, rgba(2, 4, 5, .65), transparent 40%, rgba(2, 4, 5, .15)), linear-gradient(0deg, rgba(2, 4, 5, .88), transparent 44%); }
+    .scanline { position: absolute; top: 0; bottom: 0; left: 0; width: 2px; opacity: 0; background: #fff; box-shadow: 0 0 8px #fff, 0 0 28px var(--blue), 0 0 70px var(--blue); }
+    .transform__top { position: absolute; left: 26px; right: 26px; top: 28px; display: flex; justify-content: space-between; align-items: center; font: 400 9px/1 var(--mono); letter-spacing: .18em; text-transform: uppercase; color: rgba(238, 243, 245, .58); }
+    .transform__top b { color: var(--blue-soft); font-weight: 400; }
+    .transform__meter { width: min(250px, 35vw); height: 2px; background: rgba(255,255,255,.16); }
+    .transform__meter i { display: block; width: 0; height: 100%; background: var(--blue); box-shadow: 0 0 12px var(--blue); }
+    .transform__caption { position: absolute; left: max(24px, calc((100vw - var(--max)) / 2)); right: 24px; bottom: 56px; display: flex; align-items: end; justify-content: space-between; gap: 40px; }
+    .state-label { max-width: 760px; }
+    .state-label .count { display: block; margin-bottom: 12px; color: var(--blue-soft); font: 500 10px/1 var(--mono); letter-spacing: .22em; text-transform: uppercase; }
+    .state-label h3 { font: 600 clamp(56px, 9vw, 124px)/.85 var(--display); letter-spacing: -.025em; text-transform: uppercase; }
+    .state-label h3 span { color: var(--amber); }
+    .state-label p { max-width: 470px; margin-top: 20px; color: #b7c1c6; font-size: 13px; line-height: 1.7; }
+    .transform__side { padding-bottom: 8px; text-align: right; font: 400 9px/1.8 var(--mono); letter-spacing: .14em; color: rgba(238, 243, 245, .52); text-transform: uppercase; }
+    .transform__side strong { display: block; color: var(--blue-soft); font-weight: 400; }
+
+    .services { padding: 150px 0; background: var(--panel); }
+    .section-head { display: flex; align-items: end; justify-content: space-between; gap: 40px; margin-bottom: 70px; }
+    .section-head h2 { margin-top: 20px; font: 600 clamp(48px, 6.4vw, 84px)/.92 var(--display); text-transform: uppercase; }
+    .section-head p { max-width: 380px; color: var(--muted); font-size: 13px; line-height: 1.7; }
+    .service-grid { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid var(--line); border-left: 1px solid var(--line); }
+    .service { min-height: 330px; padding: 28px; display: flex; flex-direction: column; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); transition: background .3s, transform .3s; }
+    .service:hover { background: #121a1f; transform: translateY(-4px); }
+    .service__num { font: 400 10px/1 var(--mono); color: var(--blue); letter-spacing: .16em; }
+    .service__icon { margin: 54px 0 42px; width: 52px; height: 52px; display: grid; place-items: center; border: 1px solid rgba(61,184,255,.35); color: var(--blue-soft); font: 400 20px/1 var(--mono); transform: rotate(45deg); }
+    .service__icon span { transform: rotate(-45deg); }
+    .service h3 { margin-top: auto; font: 500 25px/1.1 var(--display); letter-spacing: .02em; text-transform: uppercase; }
+    .service p { margin-top: 13px; color: var(--muted); font-size: 12px; line-height: 1.65; }
+
+    .proof { position: relative; padding: 160px 0; overflow: hidden; }
+    .proof::before { content: ""; position: absolute; inset: 0; background: radial-gradient(circle at 70% 40%, rgba(61,184,255,.1), transparent 29%); pointer-events: none; }
+    .proof__grid { display: grid; grid-template-columns: 1fr 1fr; gap: 100px; align-items: center; }
+    .proof__visual { position: relative; aspect-ratio: 1; border: 1px solid var(--line); background: linear-gradient(145deg, #0b1115, #050708); display: grid; place-items: center; }
+    .proof__rings { width: 70%; aspect-ratio: 1; border: 1px solid rgba(61,184,255,.38); border-radius: 50%; display: grid; place-items: center; box-shadow: 0 0 80px rgba(61,184,255,.08), inset 0 0 80px rgba(61,184,255,.05); animation: ring 9s linear infinite; }
+    .proof__rings::before, .proof__rings::after { content: ""; position: absolute; border-radius: 50%; border: 1px dashed rgba(61,184,255,.22); }
+    .proof__rings::before { width: 48%; aspect-ratio: 1; }
+    .proof__rings::after { width: 86%; aspect-ratio: 1; }
+    @keyframes ring { to { transform: rotate(360deg); } }
+    .proof__bolt { position: absolute; z-index: 1; color: var(--blue); font: 600 90px/1 var(--display); text-shadow: 0 0 42px rgba(61,184,255,.6); }
+    .proof__tag { position: absolute; font: 400 8px/1 var(--mono); letter-spacing: .2em; color: var(--muted); text-transform: uppercase; }
+    .proof__tag--a { top: 22px; left: 22px; }
+    .proof__tag--b { bottom: 22px; right: 22px; }
+    .proof h2 { margin: 22px 0 26px; font: 600 clamp(48px, 6vw, 76px)/.94 var(--display); text-transform: uppercase; }
+    .proof__copy > p { max-width: 500px; color: var(--muted); line-height: 1.8; font-size: 14px; }
+    .proof__list { margin-top: 48px; }
+    .proof__item { display: flex; gap: 20px; padding: 19px 0; border-top: 1px solid var(--line); font-size: 13px; }
+    .proof__item span { color: var(--blue); font: 400 10px/1.5 var(--mono); }
+
+    .contact { padding: 130px 0; background: var(--blue); color: #00111b; }
+    .contact__grid { display: grid; grid-template-columns: 1.1fr .9fr; gap: 90px; }
+    .contact .eyebrow { color: #003758; }
+    .contact .eyebrow::before { background: #003758; }
+    .contact h2 { margin-top: 22px; font: 600 clamp(62px, 8vw, 110px)/.86 var(--display); letter-spacing: -.025em; text-transform: uppercase; }
+    .contact__copy { margin-top: 24px; max-width: 480px; line-height: 1.7; font-size: 14px; }
+    .contact form { display: grid; gap: 18px; align-content: center; }
+    .field { display: grid; gap: 8px; }
+    .field label { font: 500 9px/1 var(--mono); letter-spacing: .16em; text-transform: uppercase; }
+    .field input, .field textarea { width: 100%; padding: 15px 0; color: #00111b; background: transparent; border: 0; border-bottom: 1px solid rgba(0, 17, 27, .35); outline: 0; border-radius: 0; }
+    .field input:focus, .field textarea:focus { border-color: #00111b; }
+    .field textarea { min-height: 76px; resize: vertical; }
+    .form-submit { margin-top: 10px; padding: 18px; background: #00111b; color: #eaf8ff; border: 0; cursor: pointer; font: 500 10px/1 var(--mono); letter-spacing: .15em; text-transform: uppercase; }
+    .form-note { min-height: 18px; font: 500 10px/1.5 var(--mono); }
+
+    footer { padding: 42px 0; background: #030405; border-top: 1px solid var(--line); }
+    .footer__inner { display: flex; justify-content: space-between; gap: 28px; color: #738087; font: 400 9px/1.6 var(--mono); letter-spacing: .12em; text-transform: uppercase; }
+
+    .reveal { opacity: 0; transform: translateY(28px); transition: opacity .8s ease, transform .8s ease; }
+    .reveal.on { opacity: 1; transform: none; }
+
+    @media (max-width: 900px) {
+      .nav__links a:not(.nav__cta) { display: none; }
+      .hero__bottom, .intro__grid, .proof__grid, .contact__grid { grid-template-columns: 1fr; gap: 44px; }
+      .hero__bottom .button { justify-self: start; }
+      .intro__copy { max-width: 680px; }
+      .service-grid { grid-template-columns: 1fr 1fr; }
+      .proof__visual { max-width: 580px; width: 100%; }
+    }
+
+    @media (max-width: 620px) {
+      .shell { width: min(calc(100% - 30px), var(--max)); }
+      .nav__inner { height: 66px; }
+      .brand { gap: 6px; font-size: 12px; letter-spacing: .04em; }
+      .brand__mark { width: 21px; transform: scale(.78); transform-origin: left center; }
+      .nav__cta { padding: 10px 12px; }
+      .hero h1 { font-size: clamp(58px, 20vw, 92px); }
+      .hero__content { padding-bottom: 100px; }
+      .hero__meta { display: none; }
+      .hero__scroll { left: 15px; right: auto; }
+      .intro { padding: 100px 0; }
+      .intro__copy { grid-template-columns: 1fr; gap: 20px; }
+      .transformation { height: 310vh; }
+      .transform__caption { left: 15px; right: 15px; bottom: 76px; display: block; }
+      .state-label h3 { font-size: clamp(52px, 18vw, 86px); }
+      .transform__side { display: none; }
+      .transform__top { left: 15px; right: 15px; }
+      .services, .proof, .contact { padding: 100px 0; }
+      .section-head { display: block; }
+      .section-head p { margin-top: 20px; }
+      .service-grid { grid-template-columns: 1fr; }
+      .service { min-height: 290px; }
+      .footer__inner { flex-direction: column; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; }
+      .reveal { opacity: 1; transform: none; }
+    }
+  </style>
+</head>
+<body>
+  <nav class="nav" id="nav" aria-label="Primary navigation">
+    <div class="nav__inner shell">
+      <a class="brand" href="#top" aria-label="Manikanta Power Services home"><span class="brand__mark" aria-hidden="true"></span>MANIKANTA POWER SERVICES</a>
+      <div class="nav__links">
+        <a href="#process">Process</a>
+        <a href="#services">Services</a>
+        <a href="#standards">Standards</a>
+        <a class="nav__cta" href="#contact">Start a project</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero" id="top">
+    <div class="hero__bg" aria-hidden="true"></div>
+    <div class="hero__content shell">
+      <p class="eyebrow">Industrial electrical systems / Built to perform</p>
+      <h1>Power,<br><span>engineered.</span></h1>
+      <div class="hero__bottom">
+        <p class="hero__lead">From first survey to final energization, we design, install and commission electrical infrastructure for demanding commercial and industrial environments.</p>
+        <a class="button" href="#process">See how we work</a>
+      </div>
+    </div>
+    <div class="hero__meta">Design · Installation · Commissioning · Maintenance</div>
+    <div class="hero__scroll">Scroll to energize</div>
+  </header>
+
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee__track">
+      <span>Power distribution</span><b>◆</b><span>Switchgear</span><b>◆</b><span>Automation</span><b>◆</b><span>Critical systems</span><b>◆</b><span>Preventive maintenance</span><b>◆</b>
+      <span>Power distribution</span><b>◆</b><span>Switchgear</span><b>◆</b><span>Automation</span><b>◆</b><span>Critical systems</span><b>◆</b><span>Preventive maintenance</span><b>◆</b>
+    </div>
+  </div>
+
+  <section class="intro" aria-labelledby="intro-title">
+    <div class="intro__grid shell">
+      <p class="eyebrow reveal">The Manikanta standard</p>
+      <div>
+        <h2 class="reveal" id="intro-title">Complex power.<br><em>Clear execution.</em></h2>
+        <div class="intro__copy reveal">
+          <p>Electrical infrastructure should work quietly, safely and without compromise. We coordinate every detail—from load studies and containment to testing and handover.</p>
+          <p>Our process is built around disciplined planning, transparent communication and work that remains serviceable long after the project is complete.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="transformation" id="process" aria-label="Our three-stage delivery process">
+    <div class="transform__sticky">
+      <img class="transform__image" id="state1" src="./assets/01-power-offline.png" alt="Industrial switchgear room before commissioning">
+      <img class="transform__image" id="state2" src="./assets/02-commissioning.png" alt="Electrical technicians commissioning switchgear">
+      <img class="transform__image" id="state3" src="./assets/03-energized.png" alt="Completed and energized industrial switchgear room">
+      <div class="transform__shade"></div>
+      <div class="scanline" id="scanline" aria-hidden="true"></div>
+      <div class="transform__top">
+        <span>System status / <b id="systemState">Assessment</b></span>
+        <div class="transform__meter" aria-hidden="true"><i id="meter"></i></div>
+      </div>
+      <div class="transform__caption">
+        <div class="state-label" aria-live="polite">
+          <span class="count" id="stateCount">01 / Assess</span>
+          <h3 id="stateTitle">Know the <span>load.</span></h3>
+          <p id="stateCopy">We begin with the environment, the demand and the risks—building a clear route from current state to operational readiness.</p>
+        </div>
+        <p class="transform__side"><strong>Scroll-driven sequence</strong>Assessment → Commissioning → Energized</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="services" id="services" aria-labelledby="services-title">
+    <div class="shell">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow reveal">What we deliver</p>
+          <h2 class="reveal" id="services-title">End-to-end<br>capability.</h2>
+        </div>
+        <p class="reveal">One accountable team across the electrical lifecycle—from technical design through installation, testing and ongoing care.</p>
+      </div>
+      <div class="service-grid">
+        <article class="service reveal"><span class="service__num">01 / 06</span><div class="service__icon"><span>⌁</span></div><h3>Power distribution</h3><p>LV distribution, switchboards, protection coordination and resilient power architecture.</p></article>
+        <article class="service reveal"><span class="service__num">02 / 06</span><div class="service__icon"><span>↯</span></div><h3>Industrial installation</h3><p>Containment, cabling, machinery supplies and disciplined installation for demanding sites.</p></article>
+        <article class="service reveal"><span class="service__num">03 / 06</span><div class="service__icon"><span>◎</span></div><h3>Testing & commissioning</h3><p>Structured verification, functional testing and clear documentation before energization.</p></article>
+        <article class="service reveal"><span class="service__num">04 / 06</span><div class="service__icon"><span>◈</span></div><h3>Automation & controls</h3><p>Integrated control panels, instrumentation and intelligent building interfaces.</p></article>
+        <article class="service reveal"><span class="service__num">05 / 06</span><div class="service__icon"><span>⏱</span></div><h3>Planned maintenance</h3><p>Inspection-led maintenance that protects uptime and catches risk before failure.</p></article>
+        <article class="service reveal"><span class="service__num">06 / 06</span><div class="service__icon"><span>△</span></div><h3>System upgrades</h3><p>Phased modernization of aging infrastructure with minimal operational disruption.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="proof" id="standards" aria-labelledby="proof-title">
+    <div class="proof__grid shell">
+      <div class="proof__visual reveal" aria-hidden="true">
+        <span class="proof__tag proof__tag--a">Operational integrity / 01</span>
+        <div class="proof__rings"></div><div class="proof__bolt">ϟ</div>
+        <span class="proof__tag proof__tag--b">Engineered for uptime</span>
+      </div>
+      <div class="proof__copy">
+        <p class="eyebrow reveal">Built around safety</p>
+        <h2 class="reveal" id="proof-title">No shortcuts.<br>No surprises.</h2>
+        <p class="reveal">The best electrical work is deliberate. Every project follows a controlled path with documented decisions, clear ownership and attention to the people who will operate the system.</p>
+        <div class="proof__list reveal">
+          <div class="proof__item"><span>01</span><p>Methodical risk assessment and work planning</p></div>
+          <div class="proof__item"><span>02</span><p>Quality checks at every installation stage</p></div>
+          <div class="proof__item"><span>03</span><p>Traceable testing and handover documentation</p></div>
+          <div class="proof__item"><span>04</span><p>Maintainable systems designed for the long term</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="contact" aria-labelledby="contact-title">
+    <div class="contact__grid shell">
+      <div>
+        <p class="eyebrow">Start a conversation</p>
+        <h2 id="contact-title">Ready to<br>power up?</h2>
+        <p class="contact__copy">Tell us what you are building, upgrading or trying to solve. We will help define the next practical step.</p>
+      </div>
+      <form id="contactForm">
+        <div class="field"><label for="name">Name / company</label><input id="name" name="name" autocomplete="name" required></div>
+        <div class="field"><label for="email">Email</label><input id="email" name="email" type="email" autocomplete="email" required></div>
+        <div class="field"><label for="message">Project brief</label><textarea id="message" name="message" required></textarea></div>
+        <button class="form-submit" type="submit">Request a consultation ↗</button>
+        <p class="form-note" id="formNote" role="status"></p>
+      </form>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer__inner shell">
+      <span>© <span id="year"></span> Manikanta Power Services</span>
+      <span>Concept site · Replace identity and contact details before launch</span>
+      <a href="#top">Back to top ↑</a>
+    </div>
+  </footer>
+
+  <script>
+    const nav = document.getElementById('nav');
+    const section = document.getElementById('process');
+    const state2 = document.getElementById('state2');
+    const state3 = document.getElementById('state3');
+    const scanline = document.getElementById('scanline');
+    const meter = document.getElementById('meter');
+    const systemState = document.getElementById('systemState');
+    const stateCount = document.getElementById('stateCount');
+    const stateTitle = document.getElementById('stateTitle');
+    const stateCopy = document.getElementById('stateCopy');
+    const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+    let activeState = -1;
+
+    const states = [
+      { count: '01 / Assess', status: 'Assessment', title: 'Know the <span>load.</span>', copy: 'We begin with the environment, the demand and the risks—building a clear route from current state to operational readiness.' },
+      { count: '02 / Execute', status: 'Commissioning', title: 'Control every <span>detail.</span>', copy: 'Disciplined installation, verification and commissioning turn the design into a safe, serviceable system.' },
+      { count: '03 / Energize', status: 'System online', title: 'Ready for <span>power.</span>', copy: 'The completed system is tested, documented and ready to perform—today and through the demands ahead.' }
+    ];
+
+    function edgeClip(amount) {
+      const x = amount * 100;
+      const points = ['0 0'];
+      for (let i = 0; i <= 12; i++) {
+        const y = i * (100 / 12);
+        const jitter = amount > .01 && amount < .99 ? Math.sin(i * 2.13 + amount * 19) * 1.15 : 0;
+        points.push(`${Math.max(0, Math.min(100, x + jitter))}% ${y}%`);
+      }
+      points.push('0 100%');
+      return `polygon(${points.join(',')})`;
+    }
+
+    function updateState(index) {
+      if (activeState === index) return;
+      activeState = index;
+      const s = states[index];
+      stateCount.textContent = s.count;
+      systemState.textContent = s.status;
+      stateTitle.innerHTML = s.title;
+      stateCopy.textContent = s.copy;
+    }
+
+    function update() {
+      nav.classList.toggle('scrolled', scrollY > 30);
+      const rect = section.getBoundingClientRect();
+      const distance = section.offsetHeight - innerHeight;
+      const p = Math.max(0, Math.min(1, -rect.top / distance));
+      const p1 = Math.max(0, Math.min(1, p / .48));
+      const p2 = Math.max(0, Math.min(1, (p - .52) / .48));
+      state2.style.clipPath = edgeClip(p1);
+      state3.style.clipPath = edgeClip(p2);
+      meter.style.width = `${p * 100}%`;
+
+      const currentEdge = p < .5 ? p1 : p2;
+      scanline.style.left = `${currentEdge * 100}%`;
+      scanline.style.opacity = currentEdge > .02 && currentEdge < .98 ? .9 : 0;
+      updateState(p < .28 ? 0 : p < .72 ? 1 : 2);
+    }
+
+    addEventListener('scroll', update, { passive: true });
+    addEventListener('resize', update);
+    update();
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('on'); });
+    }, { threshold: .12 });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    document.getElementById('contactForm').addEventListener('submit', event => {
+      event.preventDefault();
+      document.getElementById('formNote').textContent = 'Demo form ready — connect your preferred inbox or CRM before launch.';
+    });
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
